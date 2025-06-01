@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>My IT Learning Journey</title>
+    <title>AleLabs - Professional IT Solutions & Services</title>
 
     <!-- load stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
@@ -15,130 +15,224 @@
             font-family: 'Open Sans', sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
+            padding: 0;
+            background-color: #f8f9fa;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        .navbar {
+            background-color: #1a252f;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
+        .navbar-brand {
+            color: white !important;
+            font-size: 1.5rem;
+            font-weight: bold;
         }
-        .blog-title {
-            font-size: 2.5em;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        .blog-description {
-            color: #666;
-            font-size: 1.2em;
-        }
-        .blog-post {
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-        }
-        .post-title {
-            color: #444;
-            font-size: 1.8em;
-            margin-bottom: 10px;
-        }
-        .post-date {
-            color: #888;
-            font-size: 0.9em;
-            margin-bottom: 15px;
-        }
-        .post-content {
-            color: #555;
-        }
-        .post-footer {
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid #eee;
-            color: #666;
-            font-size: 0.9em;
-        }
-        .post-tags {
-            display: inline-block;
-            margin-right: 15px;
-        }
-        .post-tags span {
-            background: #f0f0f0;
-            padding: 3px 8px;
-            border-radius: 3px;
-            margin-right: 5px;
-        }
-        .site-footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 2px solid #eee;
-            text-align: center;
-            color: #666;
-        }
-        .social-links {
-            margin: 15px 0;
-        }
-        .social-links a {
-            color: #666;
+        .nav-link {
+            color: rgba(255,255,255,0.9) !important;
             margin: 0 10px;
-            text-decoration: none;
-            transition: color 0.3s;
         }
-        .social-links a:hover {
-            color: #333;
+        .nav-link:hover {
+            color: #fff !important;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .hero-title {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .hero-subtitle {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        .services-section {
+            padding: 80px 0;
+            background: white;
+        }
+        .service-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .service-icon {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .blog-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        .blog-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        .blog-content {
+            padding: 20px;
+        }
+        .footer {
+            background: #1a252f;
+            color: white;
+            padding: 40px 0;
+        }
+        .btn-primary {
+            background-color: #3498db;
+            border-color: #3498db;
+            padding: 10px 25px;
+        }
+        .btn-primary:hover {
+            background-color: #2980b9;
+            border-color: #2980b9;
         }
     </style>
-    <!-- Add Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
-    <div class="container">
-        <header class="header">
-            <h1 class="blog-title">My IT Learning Journey</h1>
-            <p class="blog-description">Documenting my progress and insights in Information Technology</p>
-        </header>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">AleLabs</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://alelabs.tech" target="_blank">Order Now</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-        <main>
-            <article class="blog-post">
-                <h2 class="post-title">Getting Started with IT</h2>
-                <div class="post-date">Posted on March 20, 2024</div>
-                <div class="post-content">
-                    <p>Welcome to my IT learning blog! This space is dedicated to sharing my journey as I explore various aspects of Information Technology. I'll be documenting my learning experiences, challenges, and discoveries along the way.</p>
-                    <p>Topics I plan to cover:</p>
-                    <ul>
-                        <li>Programming and Development</li>
-                        <li>Network Administration</li>
-                        <li>Cybersecurity</li>
-                        <li>Cloud Computing</li>
-                        <li>System Administration</li>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Professional IT Solutions</h1>
+            <p class="hero-subtitle">24/7 CCTV Installation, Computer Labs Setup & Networking Solutions</p>
+            <a href="#contact" class="btn btn-primary btn-lg">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Services</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-card text-center">
+                        <i class="fas fa-video service-icon"></i>
+                        <h3>CCTV Installation</h3>
+                        <p>Professional CCTV camera installation services for homes and businesses. We provide high-quality surveillance solutions with 24/7 monitoring capabilities.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card text-center">
+                        <i class="fas fa-laptop-code service-icon"></i>
+                        <h3>Computer Labs Setup</h3>
+                        <p>Complete computer laboratory setup services for educational institutions and businesses. From planning to implementation, we handle it all.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card text-center">
+                        <i class="fas fa-network-wired service-icon"></i>
+                        <h3>Networking Solutions</h3>
+                        <p>Comprehensive networking solutions including network design, installation, and 24/7 support services for businesses of all sizes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Latest from Our Blog</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="blog-card">
+                        <div class="blog-content">
+                            <h3>Choosing the Right CCTV System</h3>
+                            <p class="text-muted">March 20, 2024</p>
+                            <p>Learn about the different types of CCTV systems and how to choose the right one for your security needs...</p>
+                            <a href="blog-cctv.html" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-card">
+                        <div class="blog-content">
+                            <h3>Setting Up a Modern Computer Lab</h3>
+                            <p class="text-muted">March 18, 2024</p>
+                            <p>Essential tips and considerations for setting up an efficient and modern computer laboratory...</p>
+                            <a href="blog-computer-lab.html" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-card">
+                        <div class="blog-content">
+                            <h3>Network Security Best Practices</h3>
+                            <p class="text-muted">March 15, 2024</p>
+                            <p>Essential network security practices to protect your business infrastructure...</p>
+                            <a href="blog-network-security.html" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>AleLabs</h4>
+                    <p>Professional IT solutions for your business needs. Available 24/7 for your service requirements.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <!-- <li><a href="#home" class="text-white">Home</a></li> -->
+                        <li><a href="https://alelabs.tech" target="_blank`" class="text-white">Order Now</a></li>
+                        <!-- <li><a href="#blog" class="text-white">Blog</a></li> -->
                     </ul>
                 </div>
-                <footer class="post-footer">
-                    <div class="post-tags">
-                        <span>IT</span>
-                        <span>Learning</span>
-                        <span>Technology</span>
-                    </div>
-                </footer>
-            </article>
-
-            <!-- Add more blog posts here -->
-        </main>
-
-        <footer class="site-footer">
-            <div class="social-links">
-                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                <div class="col-md-4">
+                    <h4>Contact Info</h4>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-phone"></i> +250 788612171</li>
+                        <li><i class="fas fa-envelope"></i> customers@alelabs.com</li>
+                        <li><i class="fas fa-clock"></i> 24/7 Support Available</li>
+                    </ul>
+                </div>
             </div>
-            <p>&copy; 2025 My IT Journey, felix @ 2025 All rights reserved.</p>
-        </footer>
-    </div>
+            <hr class="bg-light">
+            <div class="text-center">
+                <p>&copy; 2025 AleLabs. All rights reserved.</p>
+                <p>Developed at <a href="https://alelabs.tech" target="_blank">Alelabs</a></p>
+            </div>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="js/jquery-1.11.3.min.js"></script>
