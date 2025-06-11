@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>AleLabs - Professional IT Solutions & Services</title>
+    <title>AleLabs - Technology Insights and Solutions</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="logo.jpg">
+    <link rel="apple-touch-icon" href="logo.jpg">
 
     <!-- load stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400">
@@ -18,224 +23,587 @@
             padding: 0;
             background-color: #f8f9fa;
         }
-        .navbar {
-            background-color: #1a252f;
-            padding: 1rem 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        .blog-container {
+            display: flex;
+            min-height: 100vh;
         }
-        .navbar-brand {
-            color: white !important;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        .nav-link {
-            color: rgba(255,255,255,0.9) !important;
-            margin: 0 10px;
-        }
-        .nav-link:hover {
-            color: #fff !important;
-        }
-        .hero-section {
-            background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 0;
-            text-align: center;
-        }
-        .hero-title {
-            font-size: 3em;
-            margin-bottom: 20px;
-        }
-        .hero-subtitle {
-            font-size: 1.5em;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-        .services-section {
-            padding: 80px 0;
-            background: white;
-        }
-        .service-card {
-            background: white;
-            border-radius: 8px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-        .service-icon {
-            font-size: 2.5em;
-            color: #2c3e50;
-            margin-bottom: 20px;
-        }
-        .blog-section {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-        .blog-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-        }
-        .blog-content {
-            padding: 20px;
-        }
-        .footer {
+        .sidebar {
+            width: 300px;
             background: #1a252f;
             color: white;
-            padding: 40px 0;
+            padding: 30px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
         }
-        .btn-primary {
-            background-color: #3498db;
-            border-color: #3498db;
-            padding: 10px 25px;
+        .sidebar-header {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        .btn-primary:hover {
-            background-color: #2980b9;
-            border-color: #2980b9;
+        .sidebar-header h1 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        .sidebar-header p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        .author-info {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+        }
+        .author-info h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .author-info p {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        .sidebar h3 {
+            color: #fff;
+            margin: 30px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+        .sidebar a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .sidebar a:hover {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+        .sidebar a.active {
+            background: #3498db;
+            color: #fff;
+        }
+        .content {
+            flex: 1;
+            margin-left: 300px;
+            padding: 40px;
+        }
+        .blog-post {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        .blog-post h1 {
+            color: #1a252f;
+            margin-bottom: 10px;
+            font-size: 2.2rem;
+        }
+        .blog-meta {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        .blog-post h2 {
+            color: #2c3e50;
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .blog-post h3 {
+            color: #34495e;
+            margin: 25px 0 15px;
+        }
+        .blog-post ul {
+            margin-bottom: 20px;
+        }
+        .blog-post li {
+            margin-bottom: 8px;
+        }
+        .blog-post strong {
+            color: #2c3e50;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+            }
+            .content {
+                margin-left: 0;
+                padding: 20px;
+            }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">AleLabs</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://alelabs.tech" target="_blank">Order Now</a></li>
+    <div class="blog-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1>AleLabs</h1>
+                <p>Technology Insights and Solutions</p>
+            </div>
+            
+            <div class="author-info">
+                <h3>About the Author</h3>
+                <p><strong>Felix</strong></p>
+                <p>Technician and Owner at AleLabs Tech</p>
+                <p>Expert in IT infrastructure, networking, and technology solutions. With years of experience in managing computer labs, implementing security systems, and deploying modern technology solutions.</p>
+            </div>
+
+            <h3>Blog Posts</h3>
+            <ul>
+                <li><a href="#computer-lab" class="active">Setting Up a Modern Computer Lab</a></li>
+                <li><a href="#5g-technology">Understanding 5G Technology</a></li>
+                <li><a href="#cctv-systems">Choosing the Right CCTV System</a></li>
+                <li><a href="#network-security">Network Security Best Practices</a></li>
+            </ul>
+
+            <h3>Contact</h3>
+            <ul>
+                <li><i class="fas fa-phone"></i> +250 788612171</li>
+                <li><i class="fas fa-envelope"></i> customers@alelabs.tech</li>
+                <li><i class="fas fa-clock"></i> 24/7 Support Available</li>
+                <li><i class="fas fa-clock"></i> Operating in Rwanda</li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- 5G Technology Blog Post -->
+            <article id="5g-technology" class="blog-post">
+                <h1>Understanding 5G Technology and Its Real-World Applications</h1>
+                <p class="blog-meta">March 19, 2024 | 5G Technology | Written by Felix, Technician and Owner at AleLabs Tech</p>
+
+                <p>5G technology represents a revolutionary leap in wireless communication, offering unprecedented speeds, lower latency, and massive device connectivity. This comprehensive guide explores how 5G works, its advantages over 4G, and its transformative impact on various industries and daily life.</p>
+
+                <h2>What is 5G Technology?</h2>
+                <p>5G is the fifth generation of wireless technology that brings significant improvements over its predecessor, 4G LTE. It operates on three main frequency bands:</p>
+                <ul>
+                    <li><strong>Low-band:</strong> Provides wide coverage with speeds similar to 4G</li>
+                    <li><strong>Mid-band:</strong> Offers balanced coverage and speed</li>
+                    <li><strong>High-band (mmWave):</strong> Delivers ultra-fast speeds but with limited coverage</li>
                 </ul>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="container">
-            <h1 class="hero-title">Professional IT Solutions</h1>
-            <p class="hero-subtitle">24/7 CCTV Installation, Computer Labs Setup & Networking Solutions</p>
-            <a href="#contact" class="btn btn-primary btn-lg">Get Started</a>
-        </div>
-    </section>
+                <h2>How 5G Works</h2>
+                <h3>1. Technical Foundation</h3>
+                <p>5G technology operates through several key innovations:</p>
+                <ul>
+                    <li>Massive MIMO (Multiple Input, Multiple Output) antennas</li>
+                    <li>Beamforming technology for targeted signal transmission</li>
+                    <li>Network slicing for customized virtual networks</li>
+                    <li>Edge computing integration</li>
+                    <li>Advanced modulation techniques</li>
+                </ul>
 
-    <!-- Services Section -->
-    <section id="services" class="services-section">
-        <div class="container">
-            <h2 class="text-center mb-5">Our Services</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="service-card text-center">
-                        <i class="fas fa-video service-icon"></i>
-                        <h3>CCTV Installation</h3>
-                        <p>Professional CCTV camera installation services for homes and businesses. We provide high-quality surveillance solutions with 24/7 monitoring capabilities.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card text-center">
-                        <i class="fas fa-laptop-code service-icon"></i>
-                        <h3>Computer Labs Setup</h3>
-                        <p>Complete computer laboratory setup services for educational institutions and businesses. From planning to implementation, we handle it all.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card text-center">
-                        <i class="fas fa-network-wired service-icon"></i>
-                        <h3>Networking Solutions</h3>
-                        <p>Comprehensive networking solutions including network design, installation, and 24/7 support services for businesses of all sizes.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                <h2>5G vs 4G: Key Differences</h2>
+                <h3>1. Performance Comparison</h3>
+                <p>5G offers significant improvements over 4G:</p>
+                <ul>
+                    <li><strong>Speed:</strong> Up to 100x faster than 4G (up to 10 Gbps vs 100 Mbps)</li>
+                    <li><strong>Latency:</strong> Reduced from 50ms to 1-10ms</li>
+                    <li><strong>Capacity:</strong> Supports up to 1 million devices per square kilometer</li>
+                    <li><strong>Reliability:</strong> 99.999% availability</li>
+                    <li><strong>Energy Efficiency:</strong> Up to 90% reduction in network energy usage</li>
+                </ul>
 
-    <!-- Blog Section -->
-    <section id="blog" class="blog-section">
-        <div class="container">
-            <h2 class="text-center mb-5">Latest from Our Blog</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="blog-card">
-                        <div class="blog-content">
-                            <h3>Choosing the Right CCTV System</h3>
-                            <p class="text-muted">March 20, 2024</p>
-                            <p>Learn about the different types of CCTV systems and how to choose the right one for your security needs...</p>
-                            <a href="blog-cctv.html" class="btn btn-primary">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="blog-card">
-                        <div class="blog-content">
-                            <h3>Setting Up a Modern Computer Lab</h3>
-                            <p class="text-muted">March 18, 2024</p>
-                            <p>Essential tips and considerations for setting up an efficient and modern computer laboratory...</p>
-                            <a href="blog-computer-lab.html" class="btn btn-primary">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="blog-card">
-                        <div class="blog-content">
-                            <h3>Network Security Best Practices</h3>
-                            <p class="text-muted">March 15, 2024</p>
-                            <p>Essential network security practices to protect your business infrastructure...</p>
-                            <a href="blog-network-security.html" class="btn btn-primary">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                <h2>Real-World Applications</h2>
+                <h3>1. Healthcare</h3>
+                <p>5G is transforming healthcare through:</p>
+                <ul>
+                    <li>Remote surgery with real-time haptic feedback</li>
+                    <li>Telemedicine with HD video consultations</li>
+                    <li>IoT medical device monitoring</li>
+                    <li>AR/VR medical training</li>
+                    <li>Emergency response coordination</li>
+                </ul>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>AleLabs</h4>
-                    <p>Professional IT solutions for your business needs. Available 24/7 for your service requirements.</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Quick Links</h4>
-                    <ul class="list-unstyled">
-                        <!-- <li><a href="#home" class="text-white">Home</a></li> -->
-                        <li><a href="https://alelabs.tech" target="_blank`" class="text-white">Order Now</a></li>
-                        <!-- <li><a href="#blog" class="text-white">Blog</a></li> -->
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h4>Contact Info</h4>
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-phone"></i> +250 788612171</li>
-                        <li><i class="fas fa-envelope"></i> customers@alelabs.com</li>
-                        <li><i class="fas fa-clock"></i> 24/7 Support Available</li>
-                    </ul>
-                </div>
-            </div>
-            <hr class="bg-light">
-            <div class="text-center">
-                <p>&copy; 2025 AleLabs. All rights reserved.</p>
-                <p>Developed at <a href="https://alelabs.tech" target="_blank">Alelabs</a></p>
-            </div>
+                <h3>2. Smart Cities</h3>
+                <p>5G enables smart city infrastructure:</p>
+                <ul>
+                    <li>Intelligent traffic management</li>
+                    <li>Smart street lighting</li>
+                    <li>Environmental monitoring</li>
+                    <li>Public safety systems</li>
+                    <li>Waste management optimization</li>
+                </ul>
+
+                <h3>3. Industrial Applications</h3>
+                <p>Manufacturing and industry benefits include:</p>
+                <ul>
+                    <li>Industrial IoT (IIoT) implementation</li>
+                    <li>Automated quality control</li>
+                    <li>Predictive maintenance</li>
+                    <li>Remote operation of heavy machinery</li>
+                    <li>Supply chain optimization</li>
+                </ul>
+
+                <h3>4. Entertainment and Media</h3>
+                <p>Enhanced entertainment experiences through:</p>
+                <ul>
+                    <li>8K video streaming</li>
+                    <li>Cloud gaming</li>
+                    <li>AR/VR experiences</li>
+                    <li>Live event broadcasting</li>
+                    <li>Interactive content delivery</li>
+                </ul>
+
+                <h2>Benefits for Consumers</h2>
+                <p>5G brings numerous advantages to everyday users:</p>
+                <ul>
+                    <li>Faster download and upload speeds</li>
+                    <li>Seamless video streaming and gaming</li>
+                    <li>Improved mobile app performance</li>
+                    <li>Better connectivity in crowded areas</li>
+                    <li>Enhanced mobile experiences</li>
+                </ul>
+
+                <h2>Challenges and Considerations</h2>
+                <p>Implementation challenges include:</p>
+                <ul>
+                    <li>Infrastructure deployment costs</li>
+                    <li>Coverage limitations in rural areas</li>
+                    <li>Device compatibility requirements</li>
+                    <li>Security and privacy concerns</li>
+                    <li>Regulatory compliance</li>
+                </ul>
+
+                <h2>Future of 5G</h2>
+                <p>Emerging developments in 5G technology:</p>
+                <ul>
+                    <li>6G research and development</li>
+                    <li>Advanced AI integration</li>
+                    <li>Expanded IoT capabilities</li>
+                    <li>Enhanced security protocols</li>
+                    <li>New business models and services</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>5G technology represents a fundamental shift in wireless communication, enabling new possibilities across industries and transforming how we live and work. While challenges exist in implementation, the benefits of 5G far outweigh the limitations, promising a more connected and efficient future.</p>
+
+                <p>Contact AleLabs to learn more about implementing 5G solutions for your business or organization.</p>
+            </article>
+
+            <!-- Computer Lab Blog Post -->
+            <article id="computer-lab" class="blog-post">
+                <h1>Setting Up a Modern Computer Lab</h1>
+                <p class="blog-meta">March 18, 2024 | Computer Labs Setup | Written by Felix, Technician and Owner at AleLabs Tech</p>
+
+                <p>Setting up a modern computer lab requires careful planning and consideration of various factors to ensure an efficient, productive, and future-proof learning environment. In this comprehensive guide, we'll walk you through the essential aspects of creating a state-of-the-art computer laboratory.</p>
+
+                <h2>Planning Phase</h2>
+                <h3>1. Space Requirements</h3>
+                <p>Before purchasing any equipment, consider these space-related factors:</p>
+                <ul>
+                    <li>Room dimensions and layout</li>
+                    <li>Workstation spacing (recommended 4-5 feet between computers)</li>
+                    <li>Power outlet locations and capacity</li>
+                    <li>Network infrastructure requirements</li>
+                    <li>Ventilation and cooling needs</li>
+                </ul>
+
+                <h3>2. Hardware Selection</h3>
+                <p>Choose hardware based on your specific needs:</p>
+                <ul>
+                    <li><strong>Workstations:</strong> Consider performance requirements, budget, and future scalability</li>
+                    <li><strong>Networking Equipment:</strong> High-speed switches, routers, and wireless access points</li>
+                    <li><strong>Peripherals:</strong> Monitors, keyboards, mice, and other necessary equipment</li>
+                    <li><strong>Server Infrastructure:</strong> For centralized management and resource sharing</li>
+                </ul>
+
+                <h2>Infrastructure Setup</h2>
+                <h3>1. Network Architecture</h3>
+                <p>A robust network is crucial for a modern computer lab:</p>
+                <ul>
+                    <li>Gigabit Ethernet backbone</li>
+                    <li>VLAN segmentation for security</li>
+                    <li>Wireless network for mobile devices</li>
+                    <li>Internet bandwidth planning</li>
+                    <li>Network security implementation</li>
+                </ul>
+
+                <h3>2. Power Management</h3>
+                <p>Ensure reliable power distribution:</p>
+                <ul>
+                    <li>UPS systems for critical equipment</li>
+                    <li>Power distribution units (PDUs)</li>
+                    <li>Surge protection</li>
+                    <li>Backup power solutions</li>
+                </ul>
+
+                <h2>Software and Management</h2>
+                <h3>1. Operating System</h3>
+                <p>Choose an appropriate OS based on your needs:</p>
+                <ul>
+                    <li>Windows for general-purpose labs</li>
+                    <li>Linux for programming and development</li>
+                    <li>macOS for creative and design work</li>
+                </ul>
+
+                <h3>2. Management Tools</h3>
+                <p>Implement essential management software:</p>
+                <ul>
+                    <li>Remote management solutions</li>
+                    <li>Software deployment tools</li>
+                    <li>Monitoring systems</li>
+                    <li>Backup solutions</li>
+                </ul>
+
+                <h2>Security Considerations</h2>
+                <p>Protect your lab infrastructure with:</p>
+                <ul>
+                    <li>Physical security measures</li>
+                    <li>Network security protocols</li>
+                    <li>User authentication systems</li>
+                    <li>Data protection policies</li>
+                    <li>Regular security audits</li>
+                </ul>
+
+                <h2>Maintenance and Support</h2>
+                <p>Ensure long-term success with:</p>
+                <ul>
+                    <li>Regular maintenance schedules</li>
+                    <li>Technical support procedures</li>
+                    <li>User training programs</li>
+                    <li>Documentation and policies</li>
+                </ul>
+
+                <h2>Future-Proofing</h2>
+                <p>Plan for future growth and technology changes:</p>
+                <ul>
+                    <li>Scalable infrastructure design</li>
+                    <li>Technology refresh cycles</li>
+                    <li>Upgrade paths for hardware and software</li>
+                    <li>Flexible space utilization</li>
+                </ul>
+
+                <h2>Professional Installation Benefits</h2>
+                <p>Working with AleLabs for your computer lab setup ensures:</p>
+                <ul>
+                    <li>Expert planning and consultation</li>
+                    <li>Professional installation and configuration</li>
+                    <li>Comprehensive testing and validation</li>
+                    <li>Ongoing support and maintenance</li>
+                    <li>Training and documentation</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>Setting up a modern computer lab is a significant investment that requires careful planning and execution. By following these guidelines and working with experienced professionals like AleLabs, you can create a computer laboratory that meets your current needs while remaining adaptable for future requirements.</p>
+
+                <p>Contact AleLabs today to discuss your computer lab setup requirements and get a customized solution for your institution.</p>
+            </article>
+
+            <!-- CCTV Systems Blog Post -->
+            <article id="cctv-systems" class="blog-post">
+                <h1>Choosing the Right CCTV System</h1>
+                <p class="blog-meta">March 20, 2024 | CCTV Installation | Written by Felix, Technician and Owner at AleLabs Tech</p>
+
+                <p>Selecting the right CCTV system is crucial for effective security monitoring. This guide will help you understand the different types of CCTV systems and make an informed decision for your security needs.</p>
+
+                <h2>Types of CCTV Systems</h2>
+                <h3>1. Analog CCTV Systems</h3>
+                <p>Traditional analog systems offer:</p>
+                <ul>
+                    <li>Cost-effective solution</li>
+                    <li>Simple installation</li>
+                    <li>Basic recording capabilities</li>
+                    <li>Limited resolution options</li>
+                </ul>
+
+                <h3>2. IP (Network) CCTV Systems</h3>
+                <p>Modern IP-based systems provide:</p>
+                <ul>
+                    <li>High-definition video quality</li>
+                    <li>Remote access capabilities</li>
+                    <li>Advanced analytics features</li>
+                    <li>Scalable infrastructure</li>
+                </ul>
+
+                <h2>Key Considerations</h2>
+                <h3>1. Camera Types</h3>
+                <p>Choose cameras based on your needs:</p>
+                <ul>
+                    <li>Dome cameras for indoor use</li>
+                    <li>Bullet cameras for outdoor monitoring</li>
+                    <li>PTZ cameras for active surveillance</li>
+                    <li>Thermal cameras for low-light conditions</li>
+                </ul>
+
+                <h3>2. Resolution Requirements</h3>
+                <p>Consider these resolution options:</p>
+                <ul>
+                    <li>HD (720p) for basic monitoring</li>
+                    <li>Full HD (1080p) for detailed surveillance</li>
+                    <li>4K for maximum detail</li>
+                    <li>Thermal imaging for specialized needs</li>
+                </ul>
+
+                <h3>3. Storage Options</h3>
+                <p>Consider how you'll store your CCTV footage:</p>
+                <ul>
+                    <li>Local storage (DVR/NVR)</li>
+                    <li>Cloud storage</li>
+                    <li>Hybrid solutions</li>
+                </ul>
+
+                <h2>Professional Installation Benefits</h2>
+                <p>While DIY installation might seem cost-effective, professional installation offers several advantages:</p>
+                <ul>
+                    <li>Expert camera placement for optimal coverage</li>
+                    <li>Proper cable management and concealment</li>
+                    <li>System configuration and optimization</li>
+                    <li>Integration with existing security systems</li>
+                    <li>Warranty and support</li>
+                </ul>
+
+                <h2>Maintenance and Support</h2>
+                <p>Regular maintenance is crucial for optimal CCTV system performance. At AleLabs, we offer:</p>
+                <ul>
+                    <li>24/7 technical support</li>
+                    <li>Regular system health checks</li>
+                    <li>Software updates and upgrades</li>
+                    <li>Emergency repair services</li>
+                </ul>
+
+                <h2>Conclusion</h2>
+                <p>Choosing the right CCTV system requires careful consideration of your specific needs, budget, and security requirements. At AleLabs, we provide expert consultation and installation services to help you select and implement the perfect CCTV solution for your property.</p>
+
+                <p>Contact us today for a free consultation and quote for your CCTV installation needs.</p>
+            </article>
+
+            <!-- Network Security Blog Post -->
+            <article id="network-security" class="blog-post">
+                <h1>Network Security Best Practices</h1>
+                <p class="blog-meta">March 15, 2024 | Networking Solutions | Written by Felix, Technician and Owner at AleLabs Tech</p>
+
+                <p>Network security is essential for protecting your business infrastructure from threats and ensuring smooth operations. This guide covers essential practices and strategies for maintaining a secure network environment.</p>
+
+                <h2>Essential Security Measures</h2>
+                <h3>1. Firewall Implementation</h3>
+                <p>Protect your network with:</p>
+                <ul>
+                    <li>Next-generation firewalls</li>
+                    <li>Intrusion detection systems</li>
+                    <li>Traffic monitoring</li>
+                    <li>Access control policies</li>
+                </ul>
+
+                <h3>2. Access Control</h3>
+                <p>Implement robust access management:</p>
+                <ul>
+                    <li>Strong password policies</li>
+                    <li>Multi-factor authentication</li>
+                    <li>Role-based access control</li>
+                    <li>Regular access reviews</li>
+                </ul>
+
+                <h2>Network Monitoring</h2>
+                <p>Continuous monitoring is crucial for:</p>
+                <ul>
+                    <li>Detecting suspicious activities</li>
+                    <li>Identifying potential threats</li>
+                    <li>Monitoring system performance</li>
+                    <li>Ensuring compliance</li>
+                </ul>
+
+                <h2>Data Protection</h2>
+                <p>Secure your sensitive data with:</p>
+                <ul>
+                    <li>Encryption protocols</li>
+                    <li>Secure data backup</li>
+                    <li>Data loss prevention</li>
+                    <li>Regular security audits</li>
+                </ul>
+
+                <h2>Employee Training</h2>
+                <p>Educate your staff on:</p>
+                <ul>
+                    <li>Security best practices</li>
+                    <li>Phishing awareness</li>
+                    <li>Password management</li>
+                    <li>Incident reporting</li>
+                </ul>
+
+                <h2>24/7 Network Security Support</h2>
+                <p>At AleLabs, we provide comprehensive network security services:</p>
+                <ul>
+                    <li>24/7 network monitoring</li>
+                    <li>Real-time threat detection</li>
+                    <li>Rapid incident response</li>
+                    <li>Regular security updates</li>
+                    <li>Expert security consultation</li>
+                </ul>
+
+                <h2>Best Practices Implementation</h2>
+                <p>Follow these steps to enhance your network security:</p>
+                <ol>
+                    <li>Conduct a security assessment</li>
+                    <li>Develop a security policy</li>
+                    <li>Implement security measures</li>
+                    <li>Train employees</li>
+                    <li>Monitor and maintain</li>
+                    <li>Regularly review and update</li>
+                </ol>
+
+                <h2>Conclusion</h2>
+                <p>Network security is an ongoing process that requires constant vigilance and regular updates. By implementing these best practices and working with experienced professionals like AleLabs, you can significantly enhance your network's security posture and protect your business from potential threats.</p>
+
+                <p>Contact AleLabs today to discuss your network security needs and get a customized security solution for your business.</p>
+            </article>
         </div>
-    </footer>
+    </div>
 
     <!-- Scripts -->
     <script src="js/jquery-1.11.3.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Update active state in sidebar
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.blog-post');
+            const navLinks = document.querySelectorAll('.sidebar a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
